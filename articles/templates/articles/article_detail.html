@@ -1,0 +1,16 @@
+{% extends 'accounts/base.html' %}
+
+
+{% block content %}
+<div class="article-entry">
+    <h2>{{object.title}}</h2>
+    <p>by {{object.author}} | {{object.author}}</p>
+    <p>{{object.body}}</p>
+
+</div>
+<p><a href="{% url 'articles:article_edit'  articles.pk %}">Edit</a> | 
+    <a href="{% url 'articles:article_delete' articles.pk %}">Delete</a></p>
+<p>Back to <a href="{% url 'articles:article_list' %}">All Articles</a>.</p>
+
+
+{% endblock content %}
